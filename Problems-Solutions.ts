@@ -77,3 +77,84 @@ const myCar = new Car("Toyota", 2023, "HGD-24343");
 
 // console.log(myCar.getInfo());
 // console.log(myCar.getModel());
+
+function processValue(value: string | number): number {
+  if (typeof value === "string") {
+    // console.log(value.length);
+
+    return value.length;
+  } else {
+    // console.log(value * 2);
+
+    return value * 2;
+  }
+}
+
+processValue("bangladeshi");
+processValue(10);
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  if (products.length > 0) {
+    const mostExpensiveProduct = products.reduce(
+      (previousValue, currentValue) =>
+        currentValue.price > previousValue.price ? currentValue : previousValue
+    );
+    // console.log(mostExpensiveProduct);
+
+    return mostExpensiveProduct;
+  } else {
+    // console.log(null);
+
+    return null;
+  }
+}
+
+const products: Product[] = [];
+
+getMostExpensiveProduct(products);
+
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}
+
+function getDayType(day: Day): string {
+  if (day === Day.Saturday || day === Day.Sunday) {
+    return "Weekend";
+  } else {
+    return "Weekday";
+  }
+}
+
+// console.log(getDayType(Day.Sunday));
+// console.log(getDayType(Day.Monday));
+// console.log(getDayType(Day.Tuesday));
+// console.log(getDayType(Day.Wednesday));
+// console.log(getDayType(Day.Thursday));
+// console.log(getDayType(Day.Friday));
+// console.log(getDayType(Day.Saturday));
+
+async function squareAsync(n: number): Promise<number> {
+  return new Promise((resolve, reject) => {
+    if (n >= 0) {
+      setTimeout(() => {
+        resolve(n * n);
+      }, 1000);
+    } else {
+      reject("Error: Negative number not allowed");
+    }
+  });
+}
+
+squareAsync(4).then(console.log); // Output after 1s: 16
+// squareAsync(-3).catch(console.error);
