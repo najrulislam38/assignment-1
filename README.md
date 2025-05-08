@@ -1,4 +1,4 @@
-## 6. How does TypeScript help in improving code quality and project maintainability?
+## How does TypeScript help in improving code quality and project maintainability?
 
 - **Static type checking** - Detects type-related errors at compile time instead of runtime, reducing bugs.
 - **Easier refactoring safety**: TypeScript helps us safely rename variables, extract methods, and refactor code without disrupting functionality.
